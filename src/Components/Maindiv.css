@@ -1,0 +1,74 @@
+.mainDiv {
+  background-image: url("./lbb.jpg");
+  background-size: cover;
+}
+.covidWarnning {
+  background-color: #d88152;
+  text-align: center;
+  align-items: center;
+}
+.covidWarnning img {
+  width: 1%;
+  height: 50%;
+  margin-left: 10px;
+}
+.covidWarnning {
+  flex: 1 1 auto;
+  transition: 0.5s;
+  background-image: linear-gradient(
+    to right,
+    #f6d365 0%,
+    #fda085 51%,
+    #f6d365 100%
+  );
+}
+.covidWarnning:hover {
+  cursor: pointer;
+  background-position: right center;
+}
+.searchBox {
+  padding-top: 60px;
+  text-align: center;
+  height: 180px;
+}
+.searchBox h2 {
+  padding-bottom: 40px;
+  color: #0379c7;
+}
+.form-select {
+  width: 200px;
+}
+.formBtn {
+  display: flex;
+  justify-content: left;
+}
+.mainLowerSection {
+  padding: 50px;
+  opacity: 0.8;
+  margin-right: 0;
+}
+.covidInfo {
+  background-color: #E0EEF3;
+  opacity: 0.7;
+  padding: 20px;
+}
+.infoCards {
+  background-color: #d7dcdf;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.info1{
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+.infoCards div:hover{
+    background-color: #CCD7DD;
+}
+.infoCards img{
+    width: 5%;
+    margin-right: 10px;
+}
+.infoCards p{
+margin-left: 40px;
+}

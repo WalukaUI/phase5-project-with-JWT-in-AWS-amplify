@@ -1,0 +1,320 @@
+.navBarMainDiv {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(226, 240, 240);
+  display: flex;
+}
+/* nav link underline effect --------------------------*/
+.nav-bar-links{
+  text-decoration: none;
+  position: relative;
+}
+.nav-bar-links::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #77a6f7;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+.nav-bar-links:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* nav bar button animation------------------------------ */
+
+.styled-button{
+position: relative;
+}
+.styled-button::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: #222222;
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+.styled-button:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .navBarMainDiv {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainLinksDiv,
+  .logoDiv,
+  .loginLogoutDiv {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-evenly;
+  }
+  .logoDiv{
+margin-right: 60px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .navBarMainDiv {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainLinksDiv {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-evenly;
+  }
+  .logoDiv {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-evenly;
+  }
+  .loginLogoutDiv {
+    width: auto !important;
+  }
+}
+
+.logoDiv {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  width: 25%;
+}
+.mainLinksDiv {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mainLinksDiv div a {
+  color: #000000;
+  text-decoration: none;
+}
+/* .mainLinksDiv div a:hover {
+  text-decoration: underline;
+} */
+.loginLogoutDiv {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+}
+.loggedUsername {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow:hidden;
+  padding-right: 10px;
+  padding-top: 46px;
+}
+.menuBtn {
+  width: 30%;
+}
+.changeDisplay {
+  display: none;
+}
+
+.accountSettingsDiv {
+  background-color: rgb(213, 226, 226);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+/* menubtn */
+
+#cssmenu {
+  width: auto;
+  display: block;
+  text-align: center;
+  font-family: "Pathway Gothic One", Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+}
+#cssmenu ul {
+  width: auto;
+  display: block;
+  font-size: 0;
+  text-align: center;
+  color: #000000;
+  background-color: none;
+  border: transparent;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 0.5;
+  border-radius: 3px;
+}
+
+#cssmenu li {
+  display: inline-block;
+  position: relative;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*Top level items
+---------------------------------------*/
+
+#cssmenu > ul > li > span,
+#cssmenu > ul > li > a {
+  font-size: 22px;
+  color: inherit;
+  text-decoration: none;
+  padding: 20px 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+}
+#cssmenu li:hover > span,
+#cssmenu li:hover > a {
+  color: #ffffff;
+  background-color: #77a6f7;
+}
+
+/*Sub level items
+---------------------------------------*/
+#cssmenu .dropdown {
+  text-align: left;
+  left: 0;
+  font-family: inherit;
+  color: #222222;
+  background-color: rgb(226, 240, 240);
+  border: none;
+  position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  opacity: 0;
+  cursor: default;
+}
+
+#cssmenu .dropdown li {
+  display: block;
+}
+
+#cssmenu .dropdown li > span,
+#cssmenu .dropdown li > a,
+#cssmenu .clm a,
+#cssmenu .clm h3 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  margin: 0;
+  padding: 8px 20px;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+#cssmenu .clm h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+#cssmenu .sub-item {
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.3s;
+}
+
+#cssmenu .dropdown li:hover > span,
+#cssmenu .dropdown li:hover > a {
+  color: #000000;
+  background-color: #77a6f7;
+}
+
+#cssmenu .clm a:hover {
+  color: #000000;
+  transition: color 0.2s;
+}
+#cssmenu li.full-width {
+  position: static;
+}
+#cssmenu li.full-width .dropdown {
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
+}
+
+#cssmenu li:hover > .dropdown {
+  display: block;
+  opacity: 1;
+  z-index: 1;
+}
+
+#cssmenu .dropdown li > .dropdown {
+  left: 100%;
+  right: auto;
+  top: 0;
+}
+
+#cssmenu ul.dropdown {
+  min-width: 240px; /* Sub level menu min width */
+}
+
+#cssmenu div.dropdown {
+  text-align: center;
+}
+
+/* each column */
+#cssmenu .clm {
+  text-align: left;
+  margin: 20px;
+  vertical-align: top; /*or middle*/
+  width: auto;
+  min-width: 240px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+#cssmenu .clm a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/*-----------Arrows----------------*/
+#cssmenu .arrow {
+  color: inherit;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  padding: 5px;
+  transform: rotate(135deg);
+  margin-top: -10px;
+  margin-left: 5px;
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+#cssmenu .dropdown .arrow {
+  transform: rotate(45deg);
+  top: 50%;
+  margin-top: -7px;
+  position: absolute;
+  left: auto;
+  right: 20px;
+}

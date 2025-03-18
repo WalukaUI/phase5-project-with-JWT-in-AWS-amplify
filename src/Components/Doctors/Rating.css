@@ -1,0 +1,35 @@
+:root {
+  --main-bg-color: rgb(255, 248, 231);
+  --main-font-color: rgb(0, 0, 0);
+  --theme-primary: rgb(254, 202, 27);
+}
+
+.star-rating {
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .star-rating .foreground {
+    color: var(--theme-primary);
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .star-rating .background {
+    display: flex;
+  }
+  .commentCard {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .spice-item .favorite span {
+    color: transparent;
+    text-shadow: 0 0 0 var(--theme-primary);
+  }

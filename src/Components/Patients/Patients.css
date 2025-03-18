@@ -1,0 +1,49 @@
+.patientMainDiv{
+    background-color: rgb(196, 220, 221);
+    opacity: 0.9;
+    margin: 40px;
+}
+.patientInnerDiv{
+    padding:30px;
+}
+.patientSearchForm{
+    align-items: center;
+    background-color: cornsilk;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+.patientCardDiv{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-gap: 1.5em;
+}
+/* ---------------------------- */
+.patientSearchDiv{
+    padding: 30px;
+    min-height: 500px;
+    max-height: 600px;
+    background-color: cornsilk;
+    opacity: 0.8;
+    text-align: center;
+}
+.serachPatientinnerDiv{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+@media only screen and (max-width: 800px) { 
+    .patientCardDiv{
+        display: flex;
+        flex-direction: column;
+    }
+    .serachPatientinnerDiv{
+        text-align: center;
+    }
+    .patientMainDiv{
+        margin: 5px;
+    }
+}

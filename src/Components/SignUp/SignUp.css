@@ -1,0 +1,78 @@
+.signupContainer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(154, 206, 206);
+  text-align: center;
+}
+.signupInnerContainer {
+  text-align: left;
+  display: flex;
+  padding: 30px;
+}
+.signUpformInnerDiv1 {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+}
+.signUpformInnerDiv2 {
+  display: flex;
+  flex-direction: column;
+}
+.signUpformInnerDiv1 input {
+  width: 70%;
+}
+.signUpformInnerDiv2 input {
+  width: 70%;
+}
+.createPatientBtn {
+  margin-top: 20px;
+  width: 20%;
+}
+
+/* -----------Popup Confirm window settings------------ */
+
+.display {
+  display: flex;
+  width: 25%;
+  margin-bottom: 20px;
+}
+.hidden {
+  display: none;
+}
+.popupbox {
+  color: black;
+  position: fixed;
+  background: #25131350;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.popupinner {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  height: 70%;
+  background: rgb(226, 219, 219);
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+.formSubBtn {
+  margin-left: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .signupInnerContainer {
+    flex-direction: column;
+  }
+  .signUpformInnerDiv1,
+  .signUpformInnerDiv2 {
+    padding-left: 5%;
+  }
+}

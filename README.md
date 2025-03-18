@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+This App is for Bookig appointments for doctors...
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://doctor-appointment-creator.netlify.app/
 
-## Available Scripts
+video demostration= https://www.loom.com/share/ac31449e05a94c6fbd1915e595fdc0c4?sharedAppSource=personal_library
 
-In the project directory, you can run:
+**_user-login_**
+create a account and use email address as username for login page
 
-### `npm start`
+**_doctor-login_**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+username= "Contact me",
+password= 123456
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+😎\***\*Features\*\***😎
 
-### `npm test`
+Show all doctors, patients , appointments and clinic locations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+full CRUD of appointments and patients
 
-### `npm run build`
+Search functionality for all
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Show current COVID status in a page using an open API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<<<Doctors login>>>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Doctors will be able to see their's patients and appointments
 
-### `npm run eject`
+<<<Patient login>>>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Patients will be able to Make, edit or delete an appointment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Comment on doctors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<<<App Flow Chart>>>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🤳\***\*App Flow Chart\*\***🤳
 
-## Learn More
+![Alt text](./Doc_App_flow_chart.png?raw=true "Title")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🤳\***\*Stretch Features\*\***🤳
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Display different interfaces to doctor login and patient login
 
-### Code Splitting
+Send a confirmation email(emailJS) with confirmation number after creating a account
+and send a confirmation email (Active mailer) after placing an appointment by a patient.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Used emailJS and Active mailer for sending emails
 
-### Analyzing the Bundle Size
+🤞 Extra Step
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+show clinic locations in a google map.
 
-### Making a Progressive Web App
+⬇ POSTGRESQL TABLE RELATIONSHIP ⬇
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Alt text](./appointment.jpg?raw=true "Title")

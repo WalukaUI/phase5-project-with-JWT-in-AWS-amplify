@@ -1,0 +1,77 @@
+.docSearchDiv {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  min-height: 500px;
+  max-height: calc(100vh);
+  background-color: cornsilk;
+  opacity: 0.8;
+  text-align: center;
+}
+.searchBtn {
+  margin: 1vh;
+}
+.serchTearms {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+input:focus {
+  outline: none;
+}
+.formnput {
+  padding-left: 12px;
+  padding-right: 0;
+}
+.filterBySpeciality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dragAndDropMainDiv{
+  display: flex;
+  flex-direction: row;
+  background-color: #bff8e6;
+  border: 3px solid rgb(199, 198, 198);
+  border-style: outset;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  background-color: #CEE6D9;
+  padding: 10px;
+}
+.blankContainer{
+  background-color: rgb(241, 237, 237);
+}
+.excahngeIconDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+.draggable{
+  margin: 5px;
+}
+.excahngeIcon{
+  width: 20px;
+  height: 20px; 
+  position: relative;
+}
+.draggable.dragging{
+  background-color: rgb(178, 233, 233);
+  opacity: 0.5;
+}
+@media only screen and (max-width: 768px) {
+  .docSearchDiv {
+    position:relative;
+    min-height: auto;
+    max-height: auto;
+  }
+  .doctorMainDiv {
+    margin-left: 0;
+  }
+}

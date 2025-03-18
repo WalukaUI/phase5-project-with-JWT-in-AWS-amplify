@@ -1,0 +1,15 @@
+.personsCard{
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: rgb(8, 6, 4);
+    background-color: lavender;
+}
+.personsCard button{
+    margin: 20px;
+}
+.patientForm p{
+    margin-bottom: 0px;
+
+}
+

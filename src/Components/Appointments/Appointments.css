@@ -1,0 +1,161 @@
+.mainAppointmentContainer{
+    background-color: rgb(248, 227, 201);
+    opacity: 0.9;
+    margin-right: 0;
+}
+.appointmentCardHead{
+  background-color: antiquewhite;
+  height: 120px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.appointmentMainDiv{
+    padding-left: 10;
+}
+
+.appointmentCard{
+    background-color: #E2F0F0;
+    margin: 10px 0px 10px 10px;
+    padding: 15px 10px 15px 10px;
+}
+.appointmentCard p{
+line-height: 0.6;
+}
+.patientDetlsBtn{
+    background-color: #155B7F;
+    border-radius: 0;
+    color: cornsilk;
+    height: 10vh;
+}
+.appointmentBtnsContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+.appointmentPageBtns{
+	border-radius:3px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+  margin: 5px;
+}
+
+.chnageAppBtn {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	background-color:#007dc1;
+}
+.chnageAppBtn:hover {
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	background-color:#0061a7;
+}
+
+.deleteAppBtn {
+	box-shadow:inset 0px 1px 0px 0px #fbafe3;
+	background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+	background-color:#ff5bb0;
+}
+.deleteAppBtn:hover {
+	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+	background-color:#ef027d;
+}
+
+.createAppointmentBtn{
+    background-color: #218838;
+    height: 50px;
+    color: cornsilk;
+}
+.cardDeleteBtn{
+    float: right;
+}
+.formSubBtn{
+    margin-top: 20px;
+}
+.appointmentCard p{
+  line-height: 1.2 !important;
+}
+
+@media only screen and (max-width: 600px) { 
+  .appointmentMainDiv{
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  .mainAppointmentContainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+}
+@media only screen and (max-width: 968px) { 
+  .deleteAppBtn{
+    width:177px;
+  }
+  .chnageAppBtn {
+    margin-bottom: 10px;
+  }
+
+  .appointmentBtnsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1100px) { 
+  .appointmentCard{
+    min-height: 180px;
+  }
+}
+/* -----------Popup Update window settings------------ */
+
+.display{
+    display: flex;
+    width: 25%;
+    margin-bottom: 20px;
+  }
+  .hidden{
+   display: none;
+  }
+  .popup-box {
+    color: black;
+    position: fixed;
+    background: #25131350;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+   
+  .popup-innerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    height: 80%;
+    background-color: #E2F0F0;
+    background: #f3f7d7;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+  }
+.formSubBtn{
+  margin-left: 10px;
+}

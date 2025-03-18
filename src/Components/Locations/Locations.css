@@ -1,0 +1,86 @@
+.locationDiv {
+  background-color: rgb(219, 216, 216);
+  margin-right: 0;
+}
+.locationCard:hover {
+  cursor: pointer;
+  background-color: rgb(248, 229, 203);
+}
+.mapDiv {
+  padding-top: 10px;
+  padding-left: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .locationDiv {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.locationDetails {
+  padding: 20px;
+  color: rgb(41, 35, 12);
+  display: flex;
+  background-color: rgb(231, 226, 226);
+  margin: 10px;
+}
+.locationDetails img {
+  width: 60%;
+}
+.locationDetails p {
+  line-height: 1.5;
+}
+.locationDetails h6 {
+  padding-bottom: 5px;
+}
+.locationContactDetls {
+  padding-top: 30px;
+}
+.locationImage {
+  display: flex;
+  justify-content: space-evenly;
+}
+.vl {
+  border-left: solid #d4cfcf;
+  height: 90%;
+}
+.serchLocation {
+  background-color: rgb(216, 211, 205);
+  margin-top: 10px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .locationDetails {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .locationDetails div {
+    margin-top: 20px;
+  }
+  .locationInnerDiv {
+    padding-right: 0;
+  }
+  .locationDetails p {
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  .locationDetails img {
+    height: 70%;
+    margin-top: 30%;
+    width: 90%;
+  }
+}
+
+/* ----------Carousel---------------- */
+
+#carouselExampleIndicators span {
+  color: rgb(247, 248, 252);
+}
+.carousel-item a {
+  font-size: 0.5rem;
+}

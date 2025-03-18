@@ -1,0 +1,81 @@
+.profile{
+    margin: 30px 30px ;
+    padding: 30px;
+    padding-right: 10px;
+    opacity: 0.9;
+    background-color: rgb(189, 226, 228);
+}
+.profileTopDiv{
+    background-color: rgb(201, 228, 228);
+    padding-left: 0vw; 
+}
+.profileLinksDiv{
+    border: 1px solid;
+    height: 50px;
+    background-color: rgb(172, 201, 201);
+}
+@media only screen and (max-width: 600px) { 
+    .profileLinksDiv{
+        height: auto;
+    }
+    .profile{
+        margin: 5px 5px;
+        padding-right: 5px;
+    }
+   } 
+.profileAboutDiv h5{
+    margin-top: 2vh;
+}
+.docAddressContactInfo{
+ padding-left: 30px;
+}
+.profileLinksDiv div{
+    display: flex;
+    background-color: rgb(172, 201, 201);
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 10px;
+}
+.profileLinksDiv a{
+ color: black;
+ text-decoration: underline;
+}
+.imageContainer{
+    padding-left: 0vw;
+}
+.profileAboutDiv{
+    background-color: #C6DFE0;
+    padding-right: 0;
+}
+.profileAboutDiv p{
+ line-height: 0.5;
+}
+.profileCommentsDiv{
+    height: 200px;
+    background-color: #C7E0E1; 
+}
+.aboutDoctor{
+    margin-top: 30px;
+}
+.appointmentBtnDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.profileBtn{
+    width: 70%;
+    background-color: #4286a8;
+    border-radius: 0;
+    color: cornsilk;
+    height: 10vh;
+    margin-top: 20px;
+}
+.telephoneNum{
+    display: flex;
+}
+.telephoneNum p{
+padding-left: 10px;
+}
+#patientRatings{
+    padding-top: 2vh;
+}
