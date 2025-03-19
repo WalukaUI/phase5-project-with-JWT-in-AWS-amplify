@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "./Carousel";
-import {APIProvider, Map, AdvancedMarker, InfoWindow, useAdvancedMarkerRef} from '@vis.gl/react-google-maps';
+import {APIProvider, Map, AdvancedMarker, InfoWindow} from '@vis.gl/react-google-maps';
 import "./Locations.css";
 import CardLoadAnimation from "../Doctors/DocCardLoading";
 import logo from './hospital logo.png';
@@ -9,7 +9,7 @@ function Locations({ locations }) {
   const [searchTearm, setSearchTearm] = useState("");
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [mapdiv, setmapdiv] = useState(false);
-  const [markerRef, marker] = useAdvancedMarkerRef();
+
   //supportive functions---------------------
 
   function activateSearch(e) {
@@ -46,7 +46,7 @@ function Locations({ locations }) {
                           <AdvancedMarker 
                           position={{ lat: card.latitude, lng: card.longitude }} 
                           onClick={() => setSelectedPlace(card)}
-                          ><img src={logo} width={32} height={32} />
+                          ><img src={logo} width={32} height={32} alt="logo"/>
                             </AdvancedMarker>
                           ))}
                                   <InfoWindow position={{ lat: selectedPlace.latitude, lng: selectedPlace.longitude }} >
