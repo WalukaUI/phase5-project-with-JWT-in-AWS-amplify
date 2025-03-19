@@ -22,7 +22,7 @@ function Carousel() {
           <div className="carousel-item active">
             <img
               className="d-block w-100"
-              src="../Carousel/1.jpg"
+              src="./Carousel/1.jpg"
               alt="First slide"
             />
             <a href="https://unsplash.com/@andrewcoop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
