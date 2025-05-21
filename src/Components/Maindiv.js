@@ -66,7 +66,9 @@ function MainContainer() {
       credentials: "include",
     })
       .then((r) => r.json())
-      .then((data) => setLocations(data));
+      .then((data) => {
+        console.log(data);
+        setLocations(data)});
   }, []);
 
   // GET Doctors------------------------
