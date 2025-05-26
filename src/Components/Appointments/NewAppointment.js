@@ -1,15 +1,16 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewAppointment.css";
-import DatePicker from "react-datepicker";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/style.css";
 import BASE_URL from "../../constraints/URL";
-import "react-datepicker/dist/react-datepicker.css";
+
 
 function NewAppiontment({ doctors, user, setAppoinements, appointments }) {
   const [newAppointment, setNewAppointment] = useState({});
   const [errors, setErrors] = useState(null);
   const [searchTearm, setSearchTearm] = useState("");
-  const [selecteddate, setSelectedDate] = useState(null);
+  const [selected, setSelectedDate] = useState(null);
 
   const history = useNavigate();
   const form = useRef();
@@ -47,7 +48,7 @@ function NewAppiontment({ doctors, user, setAppoinements, appointments }) {
       ...newAppointment,
       patient_id: user.id,
       status: "open",
-      date: selecteddate,
+      date: selected,
       [e.target.name]: e.target.value,
     };
     setNewAppointment(newBooking);
@@ -128,15 +129,15 @@ function NewAppiontment({ doctors, user, setAppoinements, appointments }) {
               style={{ display: "none" }}
             />
             <label>Select a Date</label>
-            {/* <div>
-            <DatePicker selected={selecteddate} className="form-select" dateFormat="dd/MM/yy" name="date" onChange={(date) => setSelectedDate(date)} />
-            </div> */}
+            <div>
+            <DayPicker mode="single" selected={selected} className="form-select" dateFormat="dd/MM/yy" name="date" onSelect={(date) => setSelectedDate(date)} footer={selected ? `Selected: ${selected.toLocaleDateString()}` : "Pick a day."}/>
+            </div>
             <label>Time</label>
             <select
               className="form-select"
               name="time"
               onChange={handleNewAppointment}
-              disabled={!selecteddate}
+              disabled={!selected}
             >
               <option value={1000}>10.00 am</option>
               <option value={1030}>10.30 am</option>
@@ -144,7 +145,7 @@ function NewAppiontment({ doctors, user, setAppoinements, appointments }) {
               <option value={1300}>01.00 pm</option>
               <option value={1330}>01.30 pm</option>
             </select>
-            <button type="submit" className="btn btn-primary formSubBtn" disabled={!selecteddate}>
+            <button type="submit" className="btn btn-primary formSubBtn" disabled={!selected}>
               Submit
             </button>
           </div>

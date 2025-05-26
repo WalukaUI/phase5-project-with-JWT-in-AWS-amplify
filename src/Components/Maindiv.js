@@ -6,7 +6,7 @@ import Footer from "./Footer/Footer";
 import Doctors from "./Doctors/Doctors";
 import Home from "./Home/Home";
 import DoctorLogin from "./Login/DoctorLogin/DoctorLogin";
-import BASE_URL from "../constraints/URL";
+//import BASE_URL from "../constraints/URL";
 import Locations from "./Locations/Locations";
 import DoctorProfile from "./Doctors/DoctorProfile";
 import Patients from "./Patients/Patients";

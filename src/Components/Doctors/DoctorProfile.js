@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import BASE_URL from "../../constraints/URL";
+//import BASE_URL from "../../constraints/URL";
 import StarRating from "./StarRating";
 import "./DocProfile.css";
 

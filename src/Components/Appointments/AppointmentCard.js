@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Appointments.css";
 import Loading from "../Doctors/DocCardLoading"
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/style.css";
 
 function AppointmentCard({
   card,
@@ -13,7 +13,7 @@ function AppointmentCard({
 }) {
   const [updatedAppointment, setUpdatedAppointment] = useState(null);
   const [display, setDisplay] = useState(true);
-  const [selecteddate, setSelectedDate] = useState(null);
+  const [selected, setSelectedDate] = useState(null);
 
   function filterDoctorName() {
     let filteredDoc = doctors.filter((doc) => doc.id === card.doctor_id);
@@ -43,7 +43,7 @@ function AppointmentCard({
   function handleEdit(e) {
     e.preventDefault();
     setDisplay(!display);
-    editAppointment({ ...updatedAppointment, date: selecteddate });
+    editAppointment({ ...updatedAppointment, date: selected });
   }
 
   function taketime2(){
@@ -122,7 +122,7 @@ function AppointmentCard({
                 </select>
                 <label>Select a Date</label>
                 <div>
-                <DatePicker selected={selecteddate} 
+                <DayPicker selected={selected} 
                 className="form-select" 
                 dateFormat="dd/MM/yy" 
                 name="date" 
@@ -136,7 +136,7 @@ function AppointmentCard({
                   name="time"
                   aria-label="Default select example"
                   onChange={handleChange}
-                  disabled={!selecteddate}
+                  disabled={!selected}
                 >
                   <option value="0900">9.00 am - 10.00 am</option>
                   <option value="1000">10.00 am - 11.00 am</option>
@@ -144,7 +144,7 @@ function AppointmentCard({
                   <option value="1300">1.00 pm - 2.00 pm</option>
                 </select>
                 <div>
-                  <button type="submit" className="btn btn-success formSubBtn" disabled={!selecteddate}>
+                  <button type="submit" className="btn btn-success formSubBtn" disabled={!selected}>
                     Update
                   </button>
                   <button
