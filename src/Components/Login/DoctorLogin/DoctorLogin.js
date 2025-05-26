@@ -20,7 +20,6 @@ function DoctorLogin({ setUser }) {
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify({
         email: docEmail,
         password: password,

@@ -14,7 +14,6 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },
-        credentials: "include",
       }
     ).then((res) => {
       if (res.ok) {
@@ -30,7 +29,6 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
   function deleteAppointment(id) {
     fetch(BASE_URL + `/appointments/${id}`, {
       method: "DELETE",
-      credentials: "include",
     });
     const newAppointmentsList = appointments.filter(
       (appointment) => appointment.id !== id
@@ -47,7 +45,6 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify(data),
     }).then((res)=>{
       if(res.ok){

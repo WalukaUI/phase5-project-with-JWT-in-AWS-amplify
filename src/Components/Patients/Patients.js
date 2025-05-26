@@ -16,7 +16,6 @@ function Patients({ locations, user }) {
     fetch(BASE_URL + `/doctors/${user?.id}/patients`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
-      credentials: "include",
     }).then((res) => {
       if (res.ok) {
         res.json().then((data) => {
@@ -31,7 +30,6 @@ function Patients({ locations, user }) {
   function deletePatient(id) {
     fetch(BASE_URL + `/patients/${id}`, {
       method: "DELETE",
-      credentials: "include",
     });
     const newPatientsList = patients.filter((person) => person.id !== id);
     setPatients(newPatientsList);
@@ -48,7 +46,6 @@ function Patients({ locations, user }) {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify(patientObject),
     }).then((res) => {
       if (res.ok) {

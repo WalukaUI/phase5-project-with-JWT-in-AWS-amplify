@@ -19,7 +19,6 @@ function Locations({ locations }) {
 
   function mouseOverAction(e) {
     setSelectedPlace(e);
-    console.log(selectedPlace);
     
     if (mapdiv !== true) {
       setmapdiv(true);

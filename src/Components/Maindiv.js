@@ -34,10 +34,9 @@ function MainContainer() {
   
   const token = localStorage.getItem('token');
   useEffect(() => {
-    fetch(userRole === "patient" ? BASE_URL + `/me`: BASE_URL + `/doc`, {
+    fetch(userRole === "patient" ? `/me`: `/doc`, {
       method: "GET",
       headers: { "Content-Type": "application/json", "Authorization": token },
-      credentials: "include",
     }).then((r)=>{
       if(r.ok){
         r.json().then((user)=>{
@@ -57,31 +56,26 @@ function MainContainer() {
       setAddress("");
     };
   
-  // GET Locations-------------------
-
+  // GET Locations-------------------;
   useEffect(() => {
-    fetch(BASE_URL + "/locations", {
+    fetch("/locations", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
     })
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
-        setLocations(data)});
+        setLocations(data.body)});
   }, []);
 
   // GET Doctors------------------------
-
   useEffect(() => {
-    fetch(BASE_URL + `/doctors`, {
+    fetch(`/doctors`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
     }).then((res) => {
       if (res.ok) {
         res.json().then((data) => {
-          setDoctors(data);
+          setDoctors(data.body);
         });
       }
     });

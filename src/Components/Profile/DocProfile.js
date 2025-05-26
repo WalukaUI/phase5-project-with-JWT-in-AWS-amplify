@@ -20,7 +20,6 @@ function DocProfile({ user, appointments, setUser }) {
         "Content-Type": "application/json",
         "Authorization": token,
       },
-      credentials: "include",
       body: JSON.stringify(updateUserData),
     }).then((res) => {
       if (res.ok) {

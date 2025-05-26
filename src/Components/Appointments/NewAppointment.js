@@ -23,7 +23,6 @@ function NewAppiontment({ doctors, user, setAppoinements, appointments }) {
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify(newAppointment),
     }).then((res) => {
       if (res.ok) {
@@ -129,9 +128,9 @@ function NewAppiontment({ doctors, user, setAppoinements, appointments }) {
               style={{ display: "none" }}
             />
             <label>Select a Date</label>
-            <div>
+            {/* <div>
             <DatePicker selected={selecteddate} className="form-select" dateFormat="dd/MM/yy" name="date" onChange={(date) => setSelectedDate(date)} />
-            </div>
+            </div> */}
             <label>Time</label>
             <select
               className="form-select"

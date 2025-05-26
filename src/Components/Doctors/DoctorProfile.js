@@ -14,27 +14,25 @@ function DoctorProfile({ user }) {
   //-----------------GET Doctor----------------
 
   useEffect(() => {
-    fetch(BASE_URL + `/doctors/${params.id}`, {
+    fetch(`/doctors/${params.id}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
     })
       .then((r) => r.json())
       .then((data) => {
-        setDocProfile(data);
+        setDocProfile(data[0]);
       });
   }, [params.id]);
 
   //------------------GET Locations-------------
 
   useEffect(() => {
-    fetch(BASE_URL + `/doctors/${params.id}/locations`, {
+    fetch(`/doctors/${params.id}/locations`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
     })
       .then((r) => r.json())
-      .then((data) => setDocLocation(data));
+      .then((data) => setDocLocation(data[0]));
   }, [params.id]);
   //-------------POST a comment-----------------
 
@@ -48,20 +46,18 @@ function DoctorProfile({ user }) {
       points: rate,
     };
 
-    fetch(BASE_URL + `/comments`, {
+    fetch(`/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify(obj),
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          fetch(BASE_URL + `/doctors/${params.id}`, {
+          fetch(`/doctors/${params.id}`, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
-            credentials: "include",
           })
             .then((r) => r.json())
             .then((data) =>
@@ -112,13 +108,13 @@ function DoctorProfile({ user }) {
           </h5>
           <p>Speciality: {docProfile.speciality}</p>
           <div>
-            <h6>Average Ratings: {rating(docProfile.comment)}</h6>
+            <h6>Average Ratings: {rating(docProfile.comments)}</h6>
             <StarRating
-                  percentage={docProfile.comment ? rating(docProfile.comment) / 5 : 5 / 5}
+                  percentage={docProfile.comments ? rating(docProfile.comments) / 5 : 5 / 5}
                 />
             <p>
-              {docProfile.comment?.length}{" "}
-              {docProfile.comment?.length > 1 ? "comments" : "comment"}
+              {docProfile.comments?.length}{" "}
+              {docProfile.comments?.length > 1 ? "comments" : "comment"}
             </p>
             <a href="#patientRatings">Comments & Ratings</a>
           </div>
@@ -244,8 +240,8 @@ function DoctorProfile({ user }) {
       <div className="row" style={{ backgroundColor: "#D6DFC6" }}>
         <h5 id="patientRatings">Doctor Ratings and Comments</h5>
         <hr />
-        {docProfile.comment?.length > 0 ? (
-          docProfile.comment.map((card) => (
+        {docProfile.comments?.length > 0 ? (
+          docProfile.comments.map((card) => (
             <div key={card.id}>
               <div>
                 <h6>Rating</h6>

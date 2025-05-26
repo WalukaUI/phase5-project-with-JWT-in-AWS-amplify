@@ -29,7 +29,6 @@ function SignUp({ locations, setUser }) {
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include",
       body: JSON.stringify(newPatient),
     }).then((res) => {
       if (res.ok) {
