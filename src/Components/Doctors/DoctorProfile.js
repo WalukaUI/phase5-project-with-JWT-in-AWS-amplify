@@ -16,7 +16,7 @@ function DoctorProfile({ user }) {
   useEffect(() => {
     fetch(`/doctors/${params.id}`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     })
       .then((r) => r.json())
       .then((data) => {
@@ -29,7 +29,7 @@ function DoctorProfile({ user }) {
   useEffect(() => {
     fetch(`/doctors/${params.id}/locations`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     })
       .then((r) => r.json())
       .then((data) => setDocLocation(data[0]));
@@ -49,7 +49,7 @@ function DoctorProfile({ user }) {
     fetch(`/comments`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", 'Accept': 'application/json'
       },
       body: JSON.stringify(obj),
     }).then((res) => {
@@ -57,7 +57,7 @@ function DoctorProfile({ user }) {
         res.json().then((user) => {
           fetch(`/doctors/${params.id}`, {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
           })
             .then((r) => r.json())
             .then((data) =>

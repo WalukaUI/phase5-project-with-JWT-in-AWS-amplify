@@ -60,7 +60,7 @@ function MainContainer() {
   useEffect(() => {
     fetch("/locations", {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     })
       .then((r) => r.json())
       .then((data) => {
@@ -71,7 +71,7 @@ function MainContainer() {
   useEffect(() => {
     fetch(`/doctors`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     }).then((res) => {
       if (res.ok) {
         res.json().then((data) => {
