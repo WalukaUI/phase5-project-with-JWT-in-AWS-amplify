@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-//import BASE_URL from "../../constraints/URL";
+import BASE_URL from "../../constraints/URL";
 import StarRating from "./StarRating";
 import "./DocProfile.css";
 
@@ -14,7 +14,7 @@ function DoctorProfile({ user }) {
   //-----------------GET Doctor----------------
 
   useEffect(() => {
-    fetch(`/doctors/${params.id}`, {
+    fetch(BASE_URL + `/doctors/${params.id}`, {
       method: "GET",
       headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     })
@@ -27,7 +27,7 @@ function DoctorProfile({ user }) {
   //------------------GET Locations-------------
 
   useEffect(() => {
-    fetch(`/doctors/${params.id}/locations`, {
+    fetch(BASE_URL + `/doctors/${params.id}/locations`, {
       method: "GET",
       headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     })
@@ -46,7 +46,7 @@ function DoctorProfile({ user }) {
       points: rate,
     };
 
-    fetch(`/comments`, {
+    fetch(BASE_URL + `/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 'Accept': 'application/json'

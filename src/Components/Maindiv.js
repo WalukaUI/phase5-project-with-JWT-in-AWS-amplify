@@ -6,7 +6,7 @@ import Footer from "./Footer/Footer";
 import Doctors from "./Doctors/Doctors";
 import Home from "./Home/Home";
 import DoctorLogin from "./Login/DoctorLogin/DoctorLogin";
-//import BASE_URL from "../constraints/URL";
+import BASE_URL from "../constraints/URL";
 import Locations from "./Locations/Locations";
 import DoctorProfile from "./Doctors/DoctorProfile";
 import Patients from "./Patients/Patients";
@@ -34,7 +34,7 @@ function MainContainer() {
   
   const token = localStorage.getItem('token');
   useEffect(() => {
-    fetch(userRole === "patient" ? `/me`: `/doc`, {
+    fetch(userRole === "patient" ? BASE_URL + `/me`: BASE_URL + `/doc`, {
       method: "GET",
       headers: { "Content-Type": "application/json", "Authorization": token },
     }).then((r)=>{
@@ -58,7 +58,7 @@ function MainContainer() {
   
   // GET Locations-------------------;
   useEffect(() => {
-    fetch("/locations", {
+    fetch(BASE_URL + "/locations", {
       method: "GET",
       headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     })
@@ -69,7 +69,7 @@ function MainContainer() {
 
   // GET Doctors------------------------
   useEffect(() => {
-    fetch(`/doctors`, {
+    fetch(BASE_URL + `/doctors`, {
       method: "GET",
       headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     }).then((res) => {

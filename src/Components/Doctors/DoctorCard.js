@@ -10,7 +10,7 @@ function Doctor({ card }) {
   const [comment, setComment] = useState(null);
 
   useEffect(() => {
-    fetch(`/doctors/${card.id}`, {
+    fetch(BASE_URL + `/doctors/${card.id}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     }).then((res) => {
