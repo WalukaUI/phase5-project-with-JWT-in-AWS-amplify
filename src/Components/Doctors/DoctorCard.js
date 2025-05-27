@@ -12,7 +12,7 @@ function Doctor({ card }) {
   useEffect(() => {
     fetch(BASE_URL + `/doctors/${card.id}`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", 'Accept': 'application/json' },
     }).then((res) => {
       if (res.ok) {
         res.json().then((data) => {
