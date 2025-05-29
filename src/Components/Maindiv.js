@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useAuth } from "react-oidc-context";
 import "./Maindiv.css";
 import NavBar from "./NavBar/NavBar";
 import Footer from "./Footer/Footer";
@@ -28,6 +29,7 @@ function MainContainer() {
   const [locations, setLocations] = useState(null);
   const [getAddress, setAddress] = useState("");
   const userRole = localStorage.getItem("role");
+
   
 
   // auto-login----------------------
