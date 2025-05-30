@@ -9,16 +9,20 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
 
   //GET Appointments-------------------------
   useEffect(() => {
-    fetch(user?.role === "patient"? `${BASE_URL}/patients/${user?.id}/appointments`
-        : `${BASE_URL}/doctors/${user?.id}/appointments`,
+    fetch(BASE_URL + '/appointments/12',
       {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
       }
     ).then((res) => {
       if (res.ok) {
-        res.json().then((data) => {
-          setAppoinements(data);
+        res.JSON.parse.then((data) => {
+          console.log(data);
+          console.log(data.body);
+          setAppoinements(data.body);
         });
       }
     });
@@ -91,12 +95,11 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
         >
            <option value="All">All </option>
           
-           {user?.role === "patient" ? doctors.map((card) => (
+           {doctors.map((card) => (
             <option value={card.id} key={card.id+66}>
               {card.first_name} {card.last_name}
             </option>
-          )):  
-          getNamesOfPatients()
+          ))
           }
         </select></label>
 
@@ -154,11 +157,7 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
           )}
         </div>
 
-        {appointments?.filter((card)=> serchTearm !== null ? 
-        
-        user?.role === "patient"? card.doctor_id === parseInt(serchTearm):card.patient.id=== parseInt(serchTearm)
-        : card)
-        .map((card) => {
+        {appointments.map((card) => {
           return <AppointmentCard
             key={card.id+85}
             time={card.time}

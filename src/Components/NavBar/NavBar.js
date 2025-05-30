@@ -1,14 +1,23 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "react-oidc-context";
 import "./NavBar.css";
 import { UserContext } from "../Maindiv";
 
 function NavBar({ logout, getAddress, setAddress }) {
+  const auth = useAuth();
   const history = useNavigate();
   const user = useContext(UserContext);
+  const signOutRedirect = () => {
+    const clientId = "2kih0h4ra0c1ognli9tomv1hs7";
+    const logoutUri = "https://google.com";
+    const cognitoDomain = "https://us-east-2smuhwfuds.auth.us-east-2.amazoncognito.com";
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
+  };
 
   function handlelogout(e) {
     e.preventDefault();
+    auth.removeUser()
     logout();
     history("/LogoutLandingPage");
   }
@@ -130,28 +139,21 @@ function NavBar({ logout, getAddress, setAddress }) {
           ""
         )}
 
-        {user ? (
-          <Link
+        {auth.isAuthenticated ? (
+          <button
             className="btn btn-warning"
-            to="/doctorlogin"
             onClick={handlelogout}
           >
            🔐 Log Out
-          </Link>
+          </button>
         ) : (
-          <Link
+          <button
             className="btn btn-outline-primary styled-button"
-            to="/doctorlogin"
+            onClick={auth.signinRedirect()}
           >
-            Doctor Log in
-          </Link>
+            Patient Log in
+          </button>
         )}
-        <Link
-          className={user ? "changeDisplay" : "btn btn-primary styled-button"}
-          to="/patientlogin"
-        >
-          Patient Log in
-        </Link>
       </div>
 
       <div className="loginLogoutDiv">

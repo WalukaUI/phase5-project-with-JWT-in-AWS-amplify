@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../DocLogin&PatientLogin.css";
+import { useAuth } from "react-oidc-context";
 import BASE_URL from "../../../constraints/URL";
 
 function PatientLogin({ setUser }) {
+  const auth = useAuth();
   const [patientEmail, setPatientEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
@@ -15,33 +17,18 @@ function PatientLogin({ setUser }) {
   
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(BASE_URL + `/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: patientEmail,
-        password: password,
-        patient: true,
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        res.json().then((user) => {
-          setUser(user.patient);
-          setPatientEmail("");
-          setPassword("");
-          setErrors(null);
-          localStorage.setItem("role", "patient");
-          localStorage.setItem("token", user.token);
-          history("/");
-        });
-      } else {
-        res.json().then((err) => {
-          setErrors(err.error);
-        });
-      }
-    });
+    auth.signinRedirect()
+
+    // setUser(user.patient);
+    // setPatientEmail("");
+    // setPassword("");
+    // setErrors(null);
+    localStorage.setItem("role", "patient");
+    // localStorage.setItem("token", user.token);
+
+
+
+    //setErrors(err.error);
   }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
-import { Route, Routes } from "react-router-dom";
 import { useAuth } from "react-oidc-context";
+import { Route, Routes } from "react-router-dom";
 import "./Maindiv.css";
 import NavBar from "./NavBar/NavBar";
 import Footer from "./Footer/Footer";
@@ -23,7 +23,8 @@ import LogoutLandingPage from "./Login/LogOutPage";
 
 export const UserContext = createContext();
 function MainContainer() {
-  const [user, setUser] = useState(null);
+  const auth = useAuth();
+  const [user, setUser] = useState(auth.isAuthenticated? {role: "patient", email: auth.user?.profile.email, id: 14, last_name: "xxxxxxxxxx"}: null);
   const [appointments, setAppoinements] = useState(null);
   const [doctors, setDoctors] = useState(null);
   const [locations, setLocations] = useState(null);
@@ -34,19 +35,19 @@ function MainContainer() {
 
   // auto-login----------------------
   
-  const token = localStorage.getItem('token');
-  useEffect(() => {
-    fetch(userRole === "patient" ? BASE_URL + `/me`: BASE_URL + `/doc`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json", "Authorization": token },
-    }).then((r)=>{
-      if(r.ok){
-        r.json().then((user)=>{
-          setUser(user);
-        })
-      }
-    })
-  },[userRole]);
+  //const token = localStorage.getItem('token');
+  // useEffect(() => {
+  //   fetch(userRole === "patient" ? BASE_URL + `/me`: BASE_URL + `/doc`, {
+  //     method: "GET",
+  //     headers: { "Content-Type": "application/json", "Authorization": token },
+  //   }).then((r)=>{
+  //     if(r.ok){
+  //       r.json().then((user)=>{
+  //         setUser(user);
+  //       })
+  //     }
+  //   })
+  // },[userRole]);
 
 
   // LOGOUT-----------------------
@@ -82,9 +83,9 @@ function MainContainer() {
       }
     });
   }, []);
-
-
+  
   return (
+
     <div className="mainDiv">
       <UserContext.Provider value={user}>
         <NavBar
@@ -130,7 +131,7 @@ function MainContainer() {
           <Route
             path="/profile"
             element={
-              userRole === "patient" ? (
+              auth.isAuthenticated ? (
                 <PatientProfile
                   user={user}
                   appointments={appointments}
