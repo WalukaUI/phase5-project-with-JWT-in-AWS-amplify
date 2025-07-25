@@ -5,6 +5,12 @@ function Footer() {
   return (
     <div className="footerMainDiv">
       <div className="col col-sm-12 col-md-4 footerDiv1">
+      <div className="chat-bot">
+        <img 
+          src="../chat-bots.gif"
+          alt="chatBot"
+        />
+        </div>
         <img
           src="../hospital logo.png"
           alt="Logo"
@@ -64,7 +70,8 @@ function Footer() {
           <a href="https://www.flaticon.com/" title="Flaticon">
             www.flaticon.com
           </a><br></br>
-          <a href="https://www.flaticon.com/free-icons/arrows" title="arrows icons">Arrows icons created by th studio - Flaticon</a>
+          <a href="https://www.flaticon.com/free-icons/arrows" title="arrows icons">Arrows icons created by th studio - Flaticon</a><br/>
+          <a href="https://www.flaticon.com/free-animated-icons/customer-service" title="customer service animated icons">Customer service animated icons created by Freepik - Flaticon</a>
         </div>
       </div>
     </div>

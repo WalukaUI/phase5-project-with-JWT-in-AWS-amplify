@@ -19,7 +19,7 @@ function Appointments({ user, appointments, setAppoinements, doctors}) {
       }
     ).then((res) => {
       if (res.ok) {
-        res.JSON.parse.then((data) => {
+        res.json().then((data) => {
           console.log(data);
           console.log(data.body);
           setAppoinements(data.body);
