@@ -5,6 +5,12 @@ function Footer() {
   return (
     <div className="footerMainDiv">
       <div className="col col-sm-12 col-md-4 footerDiv1">
+      <div className="chat-bot">
+        <img
+          src="../chat-bots.gif"
+          alt="ChatBot"
+        />
+      </div>
         <img
           src="../hospital logo.png"
           alt="Logo"
