@@ -11,7 +11,7 @@ function CardLoadAnimation() {
           </div>
           <div className="lodetextDiv">
             <h2 className="cardH2">{}</h2>
-            <p className="cardP">It is pritty slooowwwww huh, It will take 90 seconds to load.</p>
+            <p className="cardP">Loading.....</p>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@ function CardLoadAnimation() {
           </div>
           <div className="lodetextDiv">
             <h2 className="cardH2">{}</h2>
-            <p className="cardP">Backend has been hosted on render.com</p>
+            <p className="cardP">Loading.....</p>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@ function CardLoadAnimation() {
           </div>
           <div className="lodetextDiv">
             <h2 className="cardH2">{}</h2>
-            <p className="cardP">Here is what Render.com Says</p>
+            <p className="cardP">Loading.....</p>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ function CardLoadAnimation() {
           </div>
           <div className="lodetextDiv">
             <h2 className="cardH2">{}</h2>
-            <p className="cardP">---"This can cause a response delay of up to 30 seconds for the first request that comes in after a period of inactivity"---</p>
+            <p className="cardP">Loading.....</p>
           </div>
         </div>
       </div>
